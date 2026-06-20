@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Copilot — Ship Smarter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+(function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
+    v=['initialize','identify','updateOptions','pageLoad','track', 'trackAgent'];for(w=0,x=v.length;w<x;++w)(function(m){
+    o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+    y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+    z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+})('34bd9b40-5603-4ade-83a5-2ada34614972');
+</script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">PM<span class="accent">Copilot</span></div>
+    <div class="nav-tag">AI for Product Managers</div>
+  </nav>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout">
+
+    <!-- SIDEBAR: History -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📁 Saved Projects</span>
+        <button class="refresh-btn" onclick="loadHistory()" title="Refresh">↺</button>
+      </div>
+      <div class="history-list" id="historyList">
+        <div class="history-empty">Loading...</div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-eyebrow">World Product Day · Everyone Ships Now</div>
+        <h1 class="hero-title">Turn your idea into a <span class="accent-underline">PRD</span> in seconds.</h1>
+        <p class="hero-sub">Type a rough product idea. Get a full PRD, user stories, and backlog tickets — saved automatically.</p>
+      </section>
+
+      <!-- GENERATOR -->
+      <section class="generator" id="generator">
+        <div class="gen-card">
+          <div class="gen-header">
+            <h2>What are you building?</h2>
+            <p>Describe your product idea in plain English</p>
+          </div>
+          <div class="gen-body">
+            <div class="input-wrap">
+              <textarea id="ideaInput" class="idea-input" placeholder="e.g. An app that helps freelancers track invoices and send automatic payment reminders..." rows="4"></textarea>
+              <div class="char-count"><span id="charCount">0</span> / 500</div>
+            </div>
+
+            <div class="type-selector">
+              <button class="type-btn active" data-type="prd">
+                <span class="type-icon">📄</span>
+                <span class="type-label">PRD</span>
+                <span class="type-desc">Full product doc</span>
+              </button>
+              <button class="type-btn" data-type="stories">
+                <span class="type-icon">🧩</span>
+                <span class="type-label">User Stories</span>
+                <span class="type-desc">6 ready stories</span>
+              </button>
+              <button class="type-btn" data-type="tickets">
+                <span class="type-icon">🎫</span>
+                <span class="type-label">Backlog Tickets</span>
+                <span class="type-desc">Jira-ready tasks</span>
+              </button>
+            </div>
+
+            <button class="gen-btn" id="generateBtn" onclick="generate()">
+              <span id="btnText">Generate ✦</span>
+              <span id="btnLoader" class="hidden">Thinking...</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- OUTPUT -->
+        <div class="output-wrap hidden" id="outputWrap">
+          <div class="output-header">
+            <div class="output-label" id="outputLabel">Your PRD</div>
+            <button class="copy-btn" onclick="copyOutput()">Copy ↗</button>
+          </div>
+          <div class="output-body" id="outputBody"></div>
+        </div>
+
+        <div class="error-wrap hidden" id="errorWrap">
+          ⚠️ <span id="errorMsg"></span>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">PM<span class="accent">Copilot</span></div>
+      <div class="footer-note">Built for <strong>World Product Day 2026</strong> · Everyone Ships Now</div>
+      <div class="footer-credit">Powered by Claude AI · Analytics by Novus.ai · DB: SQLite</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
