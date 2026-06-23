@@ -93,7 +93,7 @@ app.post("/api/generate", async (req, res) => {
     });
   } catch (err) {
     console.error("GEMINI ERROR:", JSON.stringify(err, null, 2), err.message, err.stack);
-    res.status(500).json({ error: "Failed to connect to Gemini API." }); // ✅ LINE 75: Updated error message
+    res.status(500).json({ error: "Failed to connect to Gemini API." }); // Updated error message
   }
 });
 
@@ -141,7 +141,7 @@ app.delete("/api/projects/:id", (req, res) => {
 
 // ── HEALTH ────────────────────────────────────────────
 app.get("/api/health", (req, res) => {
-  res.json({ status: "PM Copilot backend running ✅" });
+  res.json({ status: "PM Copilot backend running " });
 });
 
-app.listen(PORT, () => console.log(`✅ Backend running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(` Backend running at http://localhost:${PORT}`));
