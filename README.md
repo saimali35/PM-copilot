@@ -155,16 +155,6 @@ npx serve frontend
 
 ---
 
-## 👥 Team
-
-| Name | Role |
-|------|------|
-| [Parth Yeram](https://devpost.com/parthyeram18) | Full-stack development, AI integration, deployment |
-| [Saideep Mali](https://devpost.com/bsam93207) | Contributor |
-
-Built for the **[Mind the Product — World Product Day: Everyone Ships Now](https://mindtheproduct.devpost.com/)** hackathon.
-
----
 
 ## 📄 License
 
