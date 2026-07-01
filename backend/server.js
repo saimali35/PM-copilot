@@ -15,7 +15,7 @@ app.use(express.json());
 const path = require("path");                                          
 app.use(express.static(path.join(__dirname, "../frontend")));          
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY); //  Initialize Gemini with .env key
 
