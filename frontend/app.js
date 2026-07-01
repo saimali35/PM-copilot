@@ -1,4 +1,4 @@
-const API_BASE = "https://pm-copilot-3.onrender.com/";
+const API_BASE = "https://pm-copilot-3.onrender.com";
 
 let selectedType = "prd";
 const typeLabels = { prd: "Your PRD", stories: "User Stories", tickets: "Backlog Tickets" };
