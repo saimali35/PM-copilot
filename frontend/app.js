@@ -1,4 +1,5 @@
-const API_BASE = "https://pm-copilot-qh19.onrender.com";
+const API_BASE = "http://localhost:3001";
+
 
 let selectedType = "prd";
 const typeLabels = { prd: "Your PRD", stories: "User Stories", tickets: "Backlog Tickets" };
